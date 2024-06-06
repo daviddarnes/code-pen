@@ -18,7 +18,7 @@ General usage example:
 </code-pen>
 ```
 
-_Note that the code samples have been escaped so it's can be seen on the page_
+_Note that the code samples have been escaped so they can be seen on the page_
 
 Example with 3 code blocks (1st defaults to `html`, 2nd to `css`, 3rd to `js`):
 
