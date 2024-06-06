@@ -3,37 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Demo of component-name Web Component" />
-    <title>component-name Web Component Demo</title>
+    <meta name="description" content="Demo of code-pen Web Component" />
+    <title>code-pen Web Component Demo</title>
 
-    <script type="module" src="component-name.js"></script>
+    <script type="module" src="code-pen.js"></script>
   </head>
   <body>
     <h2>General usage example</h2>
-    <component-name>
-      <button>Button</button>
-    </component-name>
+
+    <code-pen>
+      <pre>
+        <code>&lt;p&gt;Hello world&lt;/p&gt;</code>
+      </pre>
+    </code-pen>
+
     <hr />
-    <h2>Example using a fallback method</h2>
-    <component-name>
-      <button>Button</button>
-      <a href="#">Anchor</a>
-    </component-name>
-    <style>
-      component-name:not(:defined) button,
-      component-name:defined a {
-        display: none;
-      }
-    </style>
+
+    <h2>
+      Example with 3 code blocks (1st defaults to <code>html</code>, 2nd to
+      <code>css</code>, 3rd to <code>js</code>)
+    </h2>
+
+    <code-pen>
+      <pre>
+        <code>&lt;p&gt;Hello world&lt;/p&gt;</code>
+      </pre>
+      <pre>
+        <code>:root { color: hotpink; }</code>
+      </pre>
+      <pre>
+        <code>document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+      </pre>
+    </code-pen>
+
     <hr />
-    <h2>Example using options or additional fallback method</h2>
-    <component-name attribute="value">
-      <button>Button</button>
-    </component-name>
-    <style>
-      component-name[attribute="value"] {
-        outline: 1px solid red;
-      }
-    </style>
+
+    <h2>Example setting to <code>css</code></h2>
+
+    <code-pen css>
+      <pre>
+        <code>:root { background: hotpink; }</code>
+      </pre>
+    </code-pen>
+
+    <hr />
+
+    <h2>Example explicitly setting all the languages by a selector</h2>
+
+    <code-pen html=".language-html" css=".language-css" js=".language-js">
+      <pre>
+        <code>I'm a rogue code block to ruin this Web Component demo</code>
+      </pre>
+      <pre>
+        <code class="language-html">&lt;p&gt;Hello world&lt;/p&gt;</code>
+      </pre>
+      <pre>
+        <code class="language-css">:root { color: hotpink; }</code>
+      </pre>
+      <pre>
+        <code class="language-js">document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+      </pre>
+    </code-pen>
   </body>
 </html>
