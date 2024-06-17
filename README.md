@@ -89,10 +89,15 @@ _This depends on how your markdown parses HTML_
 
 This Web Component allows you to:
 
-- Add a button under `code` elements which open that code in CodePen
-- Add a button under multiple `code` elements to open each of them in CodePen (`html`, `css` and `js` in that order)
-- Direct `code` content to a particular language in CodePen using `html`, `css` and `js` attributes
-- Direct and select specific elements to be opened up in CodePen, e.g. `html=".language-html` etc
+* Open `code` samples in the CodePen editor without any configuration
+  * Open a single HTML `code` sample
+  * Open a pair of HTML and CSS `code` samples, in respective order
+  * Open a trio of HTML, CSS and JavaScript `code` samples, in respective order
+* Adjust where the `code` sample is filled into in CodePen using the `css` and `js` attributes (`html` is the default)
+* Adjust which elements are used as the code sample source by using the `html`, `css` and `js` attributes and an element selector as its value (e.g. `css="textarea"`)
+* Add a title to the pre-filled pen using the `title` attribute
+* Change the "Open in CodePen" button text label using the `label` attribute 
+
 
 ## Installation
 
