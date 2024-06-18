@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of code-pen Web Component" />
+    <title>code-pen Web Component Demo</title>
+
+    <script type="module" src="code-pen.js"></script>
+  </head>
+  <body>
+    <h2>Example of using the <code>css</code> attribute to set the <code>code</code> element to populate the CSS editor</h2>
+
+    <code-pen css>
+      <pre>
+        <code>:root { background: hotpink; }</code>
+      </pre>
+    </code-pen>
+
+    <hr />
+
+    <h2>Example of using the <code>js</code> attribute to set the <code>code</code> element to populate the JavaScript editor</h2>
+
+    <code-pen js>
+      <pre>
+        <code>document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+      </pre>
+    </code-pen>
+
+    <hr />
+
+    <h2>Example of overwriting all defaults and setting the HTML, CSS and JavaScript editor content by selecting elements with <code>html</code>, <code>css</code> and <code>js</code> attributes</h2>
+
+    <code-pen html=".language-html" css=".language-css" js=".language-js">
+      <pre>
+        <code>I'm a rogue code block to ruin this Web Component demo</code>
+      </pre>
+      <pre>
+        <code>document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+      </pre>
+      <pre>
+        <code class="html">&lt;p&gt;Hello world&lt;/p&gt;</code>
+      </pre>
+      <pre>
+        <code class="css">:root { color: hotpink; }</code>
+      </pre>
+    </code-pen>
+
+    <hr />
+
+    <h2>Example of setting a single element to populate the CSS editor in CodePen</h2>
+
+    <code-pen css="textarea">
+      <textarea>:root { background: hotpink; }</textarea>
+    </code-pen>
+
+    <hr />
+
+    <h2>Example of setting a title for the pen and a label on the button</h2>
+
+    <code-pen title="Hello world example" label="Create new pen">
+      <pre>
+        <code>&lt;p&gt;Hello world&lt;/p&gt;</code>
+      </pre>
+    </code-pen>
+  </body>
+</html>
