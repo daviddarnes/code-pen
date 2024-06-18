@@ -119,13 +119,13 @@ You can also overwrite the element selection entirely using the `html`, `css` an
     <code>I'm a rogue code block to ruin this Web Component demo</code>
   </pre>
   <pre>
-    <code>document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+    <code class="language-js">document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
   </pre>
   <pre>
-    <code class="html">&lt;p&gt;Hello world&lt;/p&gt;</code>
+    <code class="language-html">&lt;p&gt;Hello world&lt;/p&gt;</code>
   </pre>
   <pre>
-    <code class="css">:root { color: hotpink; }</code>
+    <code class="language-css">:root { color: hotpink; }</code>
   </pre>
 </code-pen>
 ```
