@@ -1,6 +1,6 @@
 {
   "name": "@daviddarnes/code-pen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Web Component to open code samples in CodePen",
   "main": "code-pen.js",
   "scripts": {

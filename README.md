@@ -72,13 +72,13 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://www.unpkg.com/@daviddarnes/code-pen@1.0.0/code-pen.js"
+  src="https://www.unpkg.com/@daviddarnes/code-pen@1.1.0/code-pen.js"
 ></script>
 ```
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://esm.sh/@daviddarnes/code-pen@1.0.0"></script>
+<script type="module" src="https://esm.sh/@daviddarnes/code-pen@1.1.0"></script>
 ```
 
 #### Using attributes
