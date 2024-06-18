@@ -2,7 +2,7 @@
 
 A Web Component for opening code blocks in [CodePen](https://codepen.io).
 
-**[Demo](https://daviddarnes.github.io/code-pen/demo.html)** | **[Code attributes demo](https://daviddarnes.github.io/code-pen/demo-code-attributes.html)**  | **[Title and label demo](https://daviddarnes.github.io/code-pen/demo-title-label.html)** | **[Further reading](https://darn.es/code-pen-web-component/)**
+**[Demo](https://daviddarnes.github.io/code-pen/demo.html)** | **[Attributes demo](https://daviddarnes.github.io/code-pen/demo-attributes.html)** | **[Further reading](https://darn.es/code-pen-web-component/)**
 
 ## Examples
 
