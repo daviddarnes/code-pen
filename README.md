@@ -102,7 +102,7 @@ Applying the `css` or `js` attributes will cause a single `code` elements conten
 
 <code-pen js>
   <pre>
-    <code>document.querySelector(&quot;p&quot;).style.backgroundColor = &quot;orange&quot;;</code>
+    <code>document.body.style.backgroundColor = &quot;orange&quot;;</code>
   </pre>
 </code-pen>
 ```
