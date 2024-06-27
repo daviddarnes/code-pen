@@ -37,7 +37,7 @@ class CodePen extends HTMLElement {
 
       let code = block?.textContent;
 
-      if (block?.localName == "input") code = block.value;
+      if (block?.localName.match('(input|textarea)')) code = block.value;
       if (!block) code = this.code[index]?.textContent;
 
       return code;
