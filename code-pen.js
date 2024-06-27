@@ -2,7 +2,7 @@ const codePenTemplate = document.createElement("template");
 
 codePenTemplate.innerHTML = `
 <form action="https://codepen.io/pen/define" method="POST" target="_blank">
-  <input type="hidden" name="data" value="">
+  <input type="hidden" name="data">
   <input type="submit" value="Open in CodePen">
 </form>
 `;
@@ -23,7 +23,10 @@ class CodePen extends HTMLElement {
   connectedCallback() {
     this.append(this.template);
     if (this.label) this.button.value = this.label;
-    this.input.value = JSON.stringify(this.data);
+    
+    this.form.addEventListener("submit", async (event) => {
+      await this.input.setAttribute("value", JSON.stringify(this.data));
+    });
   }
 
   get data() {
@@ -91,6 +94,10 @@ class CodePen extends HTMLElement {
         this.getAttribute("template") || `${this.localName}-template`
       )
       .content.cloneNode(true);
+  }
+  
+  get form() {
+    return this.querySelector("form");
   }
 
   get input() {
