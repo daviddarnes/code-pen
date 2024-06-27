@@ -42,14 +42,16 @@ Examlpe with 3 `code` elements which default to HTML, CSS and JavaScript respect
 
 This Web Component allows you to:
 
-* Open `code` samples in the CodePen editor without any configuration
-  * Open a single HTML `code` sample
-  * Open a pair of HTML and CSS `code` samples, in respective order
-  * Open a trio of HTML, CSS and JavaScript `code` samples, in respective order
-* Adjust where the `code` sample is filled into in CodePen using the `css` and `js` attributes (`html` is the default)
-* Adjust which elements are used as the code sample source by using the `html`, `css` and `js` attributes and an element selector as its value (e.g. `css="textarea"`)
-* Add a title to the pre-filled pen using the `title` attribute
-* Change the "Open in CodePen" button text label using the `label` attribute 
+- Open `code` samples in the CodePen editor without any configuration
+  - Open a single HTML `code` sample
+  - Open a pair of HTML and CSS `code` samples, in respective order
+  - Open a trio of HTML, CSS and JavaScript `code` samples, in respective order
+- Adjust where the `code` sample is filled into in CodePen using the `css` and `js` attributes (`html` is the default)
+- Adjust which elements are used as the code sample source by using the `html`, `css` and `js` attributes and an element selector as its value (e.g. `css="textarea"`)
+- Add a title to the pre-filled pen using the `title` attribute
+- Change the "Open in CodePen" button text label using the `label` attribute 
+- Allow readers to edit the code before opening in CodePen using `contenteditable` on the code container
+- Use a custom template for specific instances using the template attribute
 
 ## Installation
 
@@ -72,13 +74,13 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://www.unpkg.com/@daviddarnes/code-pen@1.1.0/code-pen.js"
+  src="https://www.unpkg.com/@daviddarnes/code-pen@1.2.0/code-pen.js"
 ></script>
 ```
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://esm.sh/@daviddarnes/code-pen@1.1.0"></script>
+<script type="module" src="https://esm.sh/@daviddarnes/code-pen@1.2.0"></script>
 ```
 
 #### Using attributes
@@ -149,6 +151,48 @@ Optionally you can set the title of the newly create pen in CodePen as well as t
   </pre>
 </code-pen>
 ```
+
+The component also works if you want readers to be able to edit the code before opening it in CodePen. Either use a `textarea` or `input` element to contain the code samples, or add a `contenteditable="true"` attribute to the immediate containing element:
+
+```html
+<script type="module" src="code-pen.js"></script>
+
+<code-pen>
+  <pre>
+    <code contenteditable="true">&lt;p&gt;Hello world&lt;/p&gt;</code>
+  </pre>
+</code-pen>
+```
+
+## Using a custom template
+
+The default template for the component looks like this:
+
+```html
+<form action="https://codepen.io/pen/define" method="POST" target="_blank">
+  <input type="hidden" name="data">
+  <input type="submit" value="Open in CodePen">
+</form>
+```
+
+However you can customise the template by using a <template> element with an id of `code-pen-template`, which will be used for every instance of the component on the page:
+
+```html
+<template id="code-pen-template">
+  <form action="https://codepen.io/pen/define" method="POST" target="_blank">
+    <input type="hidden" name="data">
+    <button>Open in CodePen</button>
+  </form>
+</template>
+```
+
+If you do create a custom template it must:
+
+1. Use a `form` element which has the correct attributes to submit it to CodePen's API
+2. Have a hidden `input` with a `name` attribute called `data`, this is for both CodePen and for the component
+3. Some form of UI to submit the form
+
+_Note that when you do create a custom template you automatically opt out of using the `label` attribute option_
 
 ## Credit
 
